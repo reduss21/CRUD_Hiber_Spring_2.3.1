@@ -12,16 +12,31 @@
     <tr>
         <h1>Пользователи:</h1>
         <th>Id</th>
+        <th></th>
         <th>Имя</th>
+        <th></th>
         <th>Фамилия</th>
+        <th></th>
+        <th>Возвраст</th>
+        <th></th>
+        <th>Номер</th>
+        <th></th>
         <th>E-mail</th>
         <th></th>
     </tr>
     <tr th:each="user : ${users}">
         <td th:text="${user.getId()}">Id</td>
+        <td></td>
         <td th:utext="${user.getName()}">Имя</td>
+        <td></td>
         <td th:utext="${user.getSurname()}">Фамилия</td>
+        <td></td>
+        <td th:utext="${user.getAge()}">Возвраст</td>
+        <td></td>
+        <td th:utext="${user.getNumber()}">Номер</td>
+        <td></td>
         <td th:utext="${user.getEmail()}">Почта</td>
+        <td></td>
         <td>
             <a th:href="@{/users/remove/{id}(id=${user.getId()})}">Удалить</a>
             <br>

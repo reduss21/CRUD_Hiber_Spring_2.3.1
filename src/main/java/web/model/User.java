@@ -13,6 +13,8 @@ public class User {
     private Long id;
     private String name;
     private String surname;
+    private int age;
+    private Long number;
     private String email;
 
     public User() {
@@ -50,4 +52,19 @@ public class User {
         this.email = email;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Long getNumber() {
+        return number;
+    }
+
+    public void setNumber(Long number) {
+        this.number = number;
+    }
 }

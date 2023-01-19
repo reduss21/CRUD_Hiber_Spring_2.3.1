@@ -31,6 +31,8 @@ public class UserDaoImpl implements UserDao {
         user.setEmail(updateUser.getEmail());
         user.setName(updateUser.getName());
         user.setSurname(updateUser.getSurname());
+        user.setAge(updateUser.getAge());
+        user.setNumber(updateUser.getNumber());
     }
 
     @Override
