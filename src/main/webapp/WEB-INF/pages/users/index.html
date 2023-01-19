@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+          crossorigin="anonymous">
+</head>
+<body>
+<table>
+    <tr>
+        <h1>Пользователи:</h1>
+        <th>Id</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>E-mail</th>
+        <th></th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.getId()}">Id</td>
+        <td th:utext="${user.getName()}">Имя</td>
+        <td th:utext="${user.getSurname()}">Фамилия</td>
+        <td th:utext="${user.getEmail()}">Почта</td>
+        <td>
+            <a th:href="@{/users/remove/{id}(id=${user.getId()})}">Удалить</a>
+            <br>
+            <a th:href="@{/users/{id}/edit(id=${user.getId()})}">Редактировать</a>
+        </td>
+    </tr>
+</table>
+<br>
+<div>
+    <a th:href="@{/users/new}">Создать нового пользователя</a>
+</div>
+</body>
+</html>
