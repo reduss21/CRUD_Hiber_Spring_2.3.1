@@ -29,7 +29,7 @@ public class UsersController {
         return "redirect:/";
     }
 
-    @GetMapping("/users/remove/{id}")
+    @DeleteMapping ("/users/remove/{id}")
     public String delete(@PathVariable("id") int id) {
         userService.removeUser(id);
         return "redirect:/";

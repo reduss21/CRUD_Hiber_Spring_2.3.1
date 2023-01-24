@@ -38,15 +38,20 @@
         <td th:utext="${user.getEmail()}">Почта</td>
         <td></td>
         <td>
-            <a th:href="@{/users/remove/{id}(id=${user.getId()})}">Удалить</a>
-            <br>
-            <a th:href="@{/users/{id}/edit(id=${user.getId()})}">Редактировать</a>
+            <form th:method="DELETE" th:action="@{/users/remove/{id}(id=${user.getId()})}">
+                <input type="submit" value=" Удалить ">
+            </form>
+            <form th:method="GET" th:action="@{/users/{id}/edit(id=${user.getId()})}">
+                <input type="submit" value=" Редактировать ">
+            </form>
         </td>
     </tr>
 </table>
 <br>
 <div>
-    <a th:href="@{/users/new}">Создать нового пользователя</a>
+    <form th:method="POST" th:action="@{/users/new}">
+        <input type="submit" value=" Создать нового пользователя ">
+    </form>
 </div>
 </body>
 </html>
